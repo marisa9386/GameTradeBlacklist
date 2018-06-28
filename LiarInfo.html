@@ -1,0 +1,511 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>游戏交易黑名单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <link rel="icon" href="favicon.ico" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/typo.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/portfolio.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/serv.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/nav.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/liar.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- /css files -->
+    <!-- js files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--<script src="js/SmoothScroll.min.js"></script>-->
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.md5.js"></script>
+
+
+    <!-- js for back to top -->
+    <!--<script src="js/top.js"></script>-->
+    <!-- /js for back to top -->
+    <script src="js/layer-v3.1.1/layer/layer.js"></script>
+    <script src="js/mypage.js"></script>
+    <script src="js/mypage.min.js"></script>
+    <script src="js/nebPay.js"></script>
+    <script src="js/nebulas.js"></script>
+    <script src="js/liarapi.js"></script>
+    <!-- /js files -->
+
+</head>
+<body>
+    <!-- navigation -->
+    <section class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-5 nav-w3ls1">
+                    <div class="logo">
+                        <a href="index.html" class="logo-w3ls">
+                            <h1>
+                                <img class="BrandImg" src="images/blacklistmlogo.png" style="height:60px;width:auto;" alt="">
+                                游戏交易黑名单
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 nav-w3ls2">
+                    <div class="main clearfix">
+                        <nav id="menu" class="nav">
+                            <ul>
+                                <li>
+                                    <a href="index.html">
+                                        <span class="icon"><i aria-hidden="true" class="icon-home"></i></span>
+                                        <span>首页</span>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a href="LiarPage.html">
+                                        <span class="icon"><i aria-hidden="true" class="icon-team"></i></span>
+                                        <span>名单</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="commit.html">
+                                        <span class="icon"><i aria-hidden="true" class="icon-portfolio"></i></span>
+                                        <span>发布</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /navigation -->
+    <section class="page-crumb">
+        <!-- Page Content -->
+        <div class="container">
+            <!-- Page Heading/Breadcrumbs -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">首页</a>
+                        </li>
+                        <li class="active">名单
+                        
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+    <section class="portfolio-w3ls">
+        <div class="container">
+            <div class="row">
+                <!--左侧div-->
+                <div class="col-md-12">
+                    <div class="jobList font16">
+                        <!--<div class="bottom15">
+                            <span class="loginText" id="gameTitle"></span>
+                        </div>
+                        <div class="height8"></div>-->
+
+                        <div class="row">
+
+                            <div class="col-md-8">
+                                <div>
+                                    <div class="btn btn-default jobButton" id="infoType">
+                                        
+                                    </div>
+                                    <span id="infoQq" style="margin-left:10px;"></span>
+                                    
+                                </div>
+
+                                <div>
+                                    <div class="height8"></div>
+                                    <span class="textPeople">所在游戏：</span>
+                                    <span class="textPeople" style="margin-left: 10px" id="infoGameName"></span>
+                                </div>
+                                <div>
+                                    <div class="height8"></div>
+                                    <span class="textPeople">发布时间：</span>
+                                    <span class="textPeople" style="margin-left: 10px" id="infoUpdateTime"></span>
+                                </div>
+                                <div>
+                                    <div class="height8"></div>
+                                    <span class="textPeople">实锤网址：</span>
+                                    <span class="textPeople" style="margin-left: 10px" id="infoUrl"></span>
+                                </div>
+                                <div>
+                                    <div class="height8"></div>
+                                    <span class="textPeople">详细说明：</span>
+                                    <div class="height8"></div>
+                                </div>
+                                <div class="courseContent" id="infoDesc">
+                                </div>
+                                <div>
+                                    <div class="height8"></div>
+                                    <button class="btn btn-primary bgBlue bdBlue width120" style="display:none;" id="editInfo" onclick="editInfo();">修改</button>
+                                </div>
+                                </div>
+                            <div class="col-md-4">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="height10"></div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!--栏目导航 begin-->
+                    <div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist" style="background-color: #fff">
+                            <li role="presentation" class="presentation active"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab">留言</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content" style="background-color: #fff;border:1px solid #ddd">
+
+
+                            <div role="tabpanel" class="tab-pane active" id="home2" style="min-height: 270px;">
+                                <div class="height20"></div>
+                                <div class="row">
+                                    <div id="commentList" class="col-md-10" style="margin-left:40px;">
+
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="page" id="page6"></div>
+                                </div>
+                                <div class="height20"></div>
+                                <div class="row">
+                                    <div class="text-center">
+                                        <button class="btn btn-primary bgBlue bdBlue width120" style="margin-top: -10px;" id="commentGame" data-toggle="modal" data-target="#commentModal">留言</button>
+                                    </div>
+                                </div>
+                                <div class="height10"></div>
+                                
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!--栏目导航 end-->
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="footer2">
+        <div class="container">
+            <div class="social text-center">
+                <a href="mailto:marisa9386@gmail.com"><i class="fa fa-envelope"></i></a>
+                <a href="https://github.com/marisa9386/AvgSystem" target="_blank"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- footer section -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 copy-w3ls1">
+                    <ul class="nav-links">
+                        <li><a href="index.html">首页</a></li>
+                        <li>|</li>
+                        <li><a href="LiarPage.html">名单</a></li>
+                        <li>|</li>
+                        <li><a href="commit.html">发布</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 copy-w3ls2">
+                    <p class="copyright">Copyright &copy; 2018 Marisa9386 All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--评论模态框 begin-->
+    <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document" style="max-width:550px;margin-top: 18.5% ">
+            <div class="modal-content" style="max-width: 550px;">
+                <div class="modal-header" style="text-align: center;border-bottom: 0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body" style="padding: 20px 55px 20px 55px">
+                    <div class="height40"></div>
+                    <!--用户登录表单-->
+                    <form>
+                        <div class="form-group">
+                            <textarea id="commentContent" maxlength="200" class="form-control" rows="4"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" id="comment_button" onclick="uploadComment()">
+                        发布
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--评论模态框 end-->
+    <!-- /footer section -->
+    <!-- back to top -->
+    <a href="#0" class="cd-top">Top</a>
+    <!-- /back to top -->
+    <!-- js for nebulas -->
+    <script type="text/javascript">
+
+        var LiarId = getQueryString("id");
+
+
+
+        var uploadComment = function () {
+            var evaluate = $("input[name='optionsRadiosinline']:checked").val();
+            var comment = $("#commentContent").val();
+
+
+            var param = {lid:LiarId,content:comment};
+            var args = JSON.stringify([param]);
+
+            newTransaction(mainContractAddress, 0, "addCommentInfo", args, function(t) {
+                if("Error: Transaction rejected by user" == t) {
+                    layer.alert("已取消", function (index) {
+                        layer.close(index);
+                    });
+
+                } else {
+                    layer.alert("提交完毕，请等待交易完成", function (index) {
+                        layer.close(index);
+                        //window.location.href = 'LiarPage.html';
+                        $("#commentModal").modal('hide');
+                        $.course.init();
+                    });
+
+                }
+
+
+
+            });
+
+        }
+
+
+        var loadInfoDetail = function () {
+            var args = JSON.stringify([LiarId]);
+            onSimulateCallClick(mainContractAddress, "getLiarInfo", args, function (e) {
+                var item = JSON.parse(e.result);
+                if (item.qq) {
+                    loadInfo("infoQq", "QQ" + item.qq);
+
+                    var liarType = "骗子";
+                    if (item.liarType == 2) {
+                        liarType = "号贩子";
+                    }
+                    loadInfo("infoType", liarType);
+                    loadInfo("infoGameName", item.gameName);
+                    loadInfo("infoUpdateTime", timeStamp2String(item.updateTime));
+
+                    if (item.isOwner == 1)
+                    {
+                        $("#editInfo").show();
+                    }
+                    
+                    if (item.url != '')
+                    {
+                        var urlHtml = '<a href="' + item.url + '" target="_blank">' + item.url + '</a>';
+                        loadInfoHtml("infoUrl", urlHtml);
+                    }
+
+                    loadInfoHtml("infoDesc", item.desc.replace(/\r\n/g, "<br>").replace(/\n/g, "</br>"));
+
+
+                } else {
+
+                }
+
+            });
+
+        };
+
+        function loadInfo(id, content) {
+            if (id == "" || id == null || id == "undefined") {
+                return;
+            }
+            else {
+                if (content != null && content != "null") {
+                    $("#" + id).text(content);
+                }
+                else {
+                    $("#" + id).text('');
+                }
+            }
+        }
+
+        function loadInfoUrl(id, content) {
+            if (id == "" || id == null || id == "undefined") {
+                return;
+            }
+            else {
+                if (content != null && content != "null") {
+                    var url = "<a target='_blank' href='http://" + content.replace("http://","") + "'>"+content+"</a>";
+                    $("#" + id).html(url);
+                }
+                else {
+                    $("#" + id).html('');
+                }
+            }
+        }
+
+        function loadInfoHtml(id, content) {
+            if (id == "" || id == null || id == "undefined") {
+                return;
+            }
+            else {
+                if (content != null && content != "null") {
+                    $("#" + id).html(content);
+                }
+                else {
+                    $("#" + id).html('');
+                }
+            }
+        }
+
+        (function ($) {
+            var param = {rows:10,page:1,sidx:"creTime",sord:"desc",title:"",records:0,id:LiarId};
+            $.course = {
+                requestParam: param,
+                setpage: function (pagecount, t) {
+                    $.course.requestParam.page = pagecount;
+
+                    $(t).parent().parent().children().removeClass('categoryActive');
+                    $(t).parent().addClass('categoryActive');
+
+                    $.course.init();
+                },
+                buildCourseList: function (data) {
+
+                    var $gameArea = $('#commentList');
+                    $gameArea.empty();
+                    if (data.length > 0) {
+                        for (var i = 0; i < data.length; i++) {
+                            var item = data[i];
+
+                            var creTime = timeStamp2String(item.creTime);
+
+
+                            $gameArea.append('<div class="commentDiv" >\
+                                        <div class="commentDiv2" >\
+                                            <span class="post_meta_top" style="float: left;">\
+                                                ' + item.author + ' - ' + creTime +'\
+                                            </span>\
+                                        </div>\
+                                        <div class="height8"></div>\
+                                        <p class="post_content">' + item.content + '</p>\
+                                        <div class="height30"></div>\
+                                    </div>');
+                        }
+                    } else {
+                        $gameArea.append('暂无相关评论！');
+                    }
+                },
+                init: function () {
+
+                    var args = JSON.stringify([$.course.requestParam]);
+
+                    onSimulateCallClick(mainContractAddress, "getLiarComments", args, function (e) {
+                        var result = JSON.parse(e.result);
+                        $('#page6').html("");
+                        MyPage(result.Page);
+                        var courseListHTML = $.course.buildCourseList(result.List);
+                    }
+                    );
+
+                }
+            };
+
+            $(function () {
+                loadInfoDetail();
+                $.course.init();
+
+
+                // $('#applyJob').click(applyJob);
+            });
+
+        })(jQuery);
+
+
+
+
+
+
+
+        function MyPage(Page) {
+            $.mypage("page6", Page.page, Page.total, function (page) {
+                $.course.setpage(page, this);
+                updatePage(page);
+            });
+        }
+        function updatePage(now) {
+            $.mypage("page6", now, Page.total, function (page) {
+                $.course.setpage(page, this);
+                updatePage(page);
+            });
+        }
+
+
+        var editInfo = function () { 
+            window.location.href = 'commit.html?id=' + LiarId;
+        };
+
+    </script>
+    <!-- /js for nebulas -->
+    <!-- js for navigation -->
+    <script>
+			//  The function to change the class
+			var changeClass = function (r,className1,className2) {
+				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+				if( regex.test(r.className) ) {
+					r.className = r.className.replace(regex,' '+className2+' ');
+			    }
+			    else{
+					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+			    }
+			    return r.className;
+			};
+
+			//  Creating our button in JS for smaller screens
+			var menuElements = document.getElementById('menu');
+			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+			//  Toggle the class on click to show / hide the menu
+			document.getElementById('menutoggle').onclick = function() {
+				changeClass(this, 'navtoogle active', 'navtoogle');
+			}
+
+			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+			document.onclick = function(e) {
+				var mobileButton = document.getElementById('menutoggle'),
+					buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+				}
+			}
+    </script>
+</body>
+</html>

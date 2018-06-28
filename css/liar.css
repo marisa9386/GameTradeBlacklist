@@ -1,0 +1,79 @@
+.gameItem {
+            border-bottom: 1px solid rgb(228, 231, 237);
+            font-size: 16px;
+        }
+
+        .bottom20 {
+            margin-bottom: 20px;
+        }
+
+        .bottom15 {
+            margin-bottom: 15px;
+        }
+
+        .bottom10 {
+            margin-bottom: 10px;
+        }
+
+        .bottom50 {
+            margin-bottom: 70px;
+        }
+
+        .height8 {
+            height: 8px;
+        }
+
+        .height10 {
+            height: 10px;
+        }
+
+        .height20 {
+            height: 20px;
+        }
+
+        .height50 {
+            height: 50px;
+        }
+
+         .jobButton {
+    height: 30px;
+    color: rgba(255,155,56,1);
+    border-color: rgba(255,155,56,1);
+    line-height: 16px;
+    pointer-events: none;
+}
+
+         .post_meta_top {
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+}
+    .post_content {
+    padding: 10px;
+    font-family: Poppins,sans-serif;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #757575;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+    .courseContent {
+        line-height: 20px;
+    }
+
+    .commentDiv {
+        border-bottom:1px solid rgb(228, 231, 237);
+    }
+
+    .commentDiv2 {
+        height: 35px; line-height: 35px;
+    }
+
+    .gameItem a{
+    
+}
+
+.gameItem a:hover {
+    color: #ff9900;
+
+}

@@ -1,0 +1,325 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>游戏交易黑名单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <link rel="icon" href="favicon.ico" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/typo.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/portfolio.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/serv.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/nav.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/liar.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- /css files -->
+    <!-- js files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--<script src="js/SmoothScroll.min.js"></script>-->
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.md5.js"></script>
+
+
+    <!-- js for back to top -->
+    <!--<script src="js/top.js"></script>-->
+    <!-- /js for back to top -->
+    <script src="js/mypage.js"></script>
+    <script src="js/mypage.min.js"></script>
+    <script src="js/nebPay.js"></script>
+    <script src="js/nebulas.js"></script>
+    <script src="js/liarapi.js"></script>
+    <!-- /js files -->
+
+</head>
+<body>
+    <!-- navigation -->
+    <section class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-5 nav-w3ls1">
+                    <div class="logo">
+                        <a href="index.html" class="logo-w3ls">
+                            <h1>
+                                <img class="BrandImg" src="images/blacklistmlogo.png" style="height:60px;width:auto;" alt="">
+                                游戏交易黑名单
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 nav-w3ls2">
+                    <div class="main clearfix">
+                        <nav id="menu" class="nav">
+                            <ul>
+                                <li>
+                                    <a href="index.html">
+                                        <span class="icon"><i aria-hidden="true" class="icon-home"></i></span>
+                                        <span>首页</span>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a href="LiarPage.html">
+                                        <span class="icon"><i aria-hidden="true" class="icon-team"></i></span>
+                                        <span>名单</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="commit.html">
+                                        <span class="icon"><i aria-hidden="true" class="icon-portfolio"></i></span>
+                                        <span>发布</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /navigation -->
+    <section class="page-crumb">
+        <!-- Page Content -->
+        <div class="container">
+            <!-- Page Heading/Breadcrumbs -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">首页</a>
+                        </li>
+                        <li class="active">名单</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+    <section class="portfolio-w3ls">
+        <div class="container">
+            <p class="text-center">玄不救非，氪不改命，冷静出坑，谨防被骗</p>
+
+            <div id="searchDiv" class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-lg" id="inputSearch" placeholder="QQ号/游戏名"><span class="input-group-addon btn btn-primary" onclick="$.course.init();" id="btnSearch">搜索</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="margin-top:10px;font-size: 16px;">
+                        <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="0" checked onclick="$.course.setSearchType(0, this);">全部
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="1" onclick="$.course.setSearchType(1, this);"> 骗子
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios4" value="2" onclick="$.course.setSearchType(2, this);"> 号贩子
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="height20"></div>
+
+
+            <div id="liarList" class="row" style="min-height: 400px;">
+
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <div class="page" id="page6"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    
+    <section class="footer2">
+        <div class="container">
+            <div class="social text-center">
+                <a href="mailto:marisa9386@gmail.com"><i class="fa fa-envelope"></i></a>
+                <a href="https://github.com/marisa9386/AvgSystem" target="_blank"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- footer section -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 copy-w3ls1">
+                    <ul class="nav-links">
+                        <li><a href="index.html">首页</a></li>
+                        <li>|</li>
+                        <li><a href="LiarPage.html">名单</a></li>
+                        <li>|</li>
+                        <li><a href="commit.html">发布</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 copy-w3ls2">
+                    <p class="copyright">Copyright &copy; 2018 Marisa9386 All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /footer section -->
+    <!-- back to top -->
+    <a href="#0" class="cd-top">Top</a>
+    <!-- /back to top -->
+    <!-- js for nebulas -->
+    <script type="text/javascript">
+
+
+
+    (function ($) {
+        var param = {
+            rows: 20,
+            page: 1,
+            sidx: "updateTime",
+            sord: "desc",
+            records:0,
+            qq:"",
+			gameName:"",
+			liarType:0,
+        };
+        $.course = {
+            requestParam: param,
+            setSearchType: function (liarType, t) {
+                $.course.requestParam.liarType = liarType;
+                $.course.requestParam.page = 1;
+                $.course.init();
+            },
+            setpage: function (pagecount, t) {
+                $.course.requestParam.page = pagecount;
+                $.course.init();
+            },
+            buildCourseList: function (data) {
+
+                var $gameArea = $('#liarList');
+                $gameArea.empty();
+                if (data.length > 0) {
+                    for (var i = 0; i < data.length; i++) {
+                        var item = data[i];
+
+                        var updateTime = timeStamp2String(item.updateTime);
+
+                        var gameDesc = item.desc;
+                        //if (gameDesc.length > 80) {
+                        //    gameDesc = gameDesc.substring(0, 80) + "...";
+                        //}
+
+                        var liarType = "骗子";
+                        if (item.liarType == 2) {
+                            liarType = "号贩子";
+                        }
+                        $gameArea.append('<div class="col-md-12 bottom15 gameItem" data-id="' + item.id + '">\
+                                             <a href="LiarInfo.html?id=' + item.id + '" class="lista" target="_blank">\
+								                <div class="row">\
+									                <div class="col-md-12 bottom10">\
+										                <div class="row">\
+											                <div class="col-md-3">\
+												                <i class="fa fa-qq"></i><span class="recruitTitle">：' + (item.qq || '') + '</span>\
+											                </div>\
+											                <div class="col-md-3">\
+												                <i class="fa fa-gamepad fa-lg"></i><span class="recruitTitle">：' + (item.gameName || '') + '</span>\
+											                </div>\
+											                <div class="col-md-3">\
+												                <i class="fa fa-bookmark "></i><span> 类型：' + (liarType || '') + '</span>\
+											                </div>\
+											                <div class="col-md-3">\
+												                <i class="fa fa-clock-o "></i><span class="recruitTitle">：' + (updateTime || '') + '</span>\
+											                </div>\
+										                </div>\
+									                </div>\
+								                </div>\
+								                <div class="row">\
+									                <div class="col-md-12">\
+										                <div class="textLocation lineheight2"><i class="fa fa-info-circle "></i><span>&nbsp;&nbsp;' + (gameDesc || '') + '</span></div>\
+									                </div>\
+                                                </div>\
+								                <div class="height10"></div>\
+                                               </a>\
+			                              </div> ');
+
+                    }
+                } else {
+                    $gameArea.append('抱歉，暂无相关信息！');
+                }
+            },
+            init: function () {
+                var qq = $("#inputSearch").val();
+                $.course.requestParam.qq = qq;
+                $.course.requestParam.gameName = qq;
+
+                var args = JSON.stringify([$.course.requestParam]);
+
+                onSimulateCallClick(mainContractAddress, "getLiars", args, function (e) {
+                    var result = JSON.parse(e.result);
+                    $('#page6').html("");
+                    MyPage(result.Page);
+                    var courseListHTML = $.course.buildCourseList(result.List);
+                  }
+                );
+
+            }
+        };
+        $(function () {
+            $.course.init();
+        });
+    })(jQuery);
+
+    function MyPage(Page) {
+        $.mypage("page6", Page.page, Page.total, function (page) {
+            $.course.setpage(page, this);
+            updatePage(page);
+        });
+    }
+    function updatePage(now) {
+        $.mypage("page6", now, Page.total, function (page) {
+            $.course.setpage(page, this);
+            updatePage(page);
+        });
+    }
+
+    </script>
+    <!-- /js for nebulas -->
+    <!-- js for navigation -->
+    <script>
+			//  The function to change the class
+			var changeClass = function (r,className1,className2) {
+				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+				if( regex.test(r.className) ) {
+					r.className = r.className.replace(regex,' '+className2+' ');
+			    }
+			    else{
+					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+			    }
+			    return r.className;
+			};
+
+			//  Creating our button in JS for smaller screens
+			var menuElements = document.getElementById('menu');
+			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+			//  Toggle the class on click to show / hide the menu
+			document.getElementById('menutoggle').onclick = function() {
+				changeClass(this, 'navtoogle active', 'navtoogle');
+			}
+
+			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+			document.onclick = function(e) {
+				var mobileButton = document.getElementById('menutoggle'),
+					buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+				}
+			}
+    </script>
+</body>
+</html>

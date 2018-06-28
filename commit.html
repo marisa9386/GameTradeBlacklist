@@ -1,0 +1,390 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>游戏交易黑名单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <link rel="icon" href="favicon.ico" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/typo.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/portfolio.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/serv.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/nav.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/liar.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/homeindex.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- /css files -->
+    <!-- js files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--<script src="js/SmoothScroll.min.js"></script>-->
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.md5.js"></script>
+
+
+    <!-- js for back to top -->
+    <!--<script src="js/top.js"></script>-->
+    <!-- /js for back to top -->
+    <script src="js/layer-v3.1.1/layer/layer.js"></script>
+    <script src="js/nebPay.js"></script>
+    <script src="js/nebulas.js"></script>
+    <script src="js/liarapi.js"></script>
+    <!-- /js files -->
+
+</head>
+<body>
+    <!-- navigation -->
+    <section class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-5 nav-w3ls1">
+                    <div class="logo">
+                        <a href="index.html" class="logo-w3ls">
+                            <h1>
+                                <img class="BrandImg" src="images/blacklistmlogo.png" style="height:60px;width:auto;" alt="">
+                                游戏交易黑名单
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 nav-w3ls2">
+                    <div class="main clearfix">
+                        <nav id="menu" class="nav">
+                            <ul>
+                                <li>
+                                    <a href="index.html">
+                                        <span class="icon"><i aria-hidden="true" class="icon-home"></i></span>
+                                        <span>首页</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="LiarPage.html">
+                                        <span class="icon"><i aria-hidden="true" class="icon-team"></i></span>
+                                        <span>名单</span>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a href="commit.html">
+                                        <span class="icon"><i aria-hidden="true" class="icon-portfolio"></i></span>
+                                        <span>发布</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /navigation -->
+    <section class="page-crumb">
+        <!-- Page Content -->
+        <div class="container">
+            <!-- Page Heading/Breadcrumbs -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">首页</a>
+                        </li>
+                        <li class="active">发布</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <!--左侧div-->
+                <div class="col-md-12">
+                    <div class="rightContent" style="min-height: 600px;">
+                        <div class="cvBox">
+                            <div class="sepDiv">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3 style="line-height: 32px">基本信息</h3>
+                                    </div>
+                                    <div class="col-md-6" style="text-align: right">
+                                        <a class="btn btn-default" href="javascript:void(0)" style="display:none;" id="btnSave" onclick="saveLiarInfo()"><i class="fa fa-refresh"></i>保存</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cvUserInfo">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <span class="font555 fontSize14">QQ：</span>
+                                                <input id="infoQq" class="editInput" maxlength="40" type="text" value="" style="width: 70%" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="height10"></div>
+                                            <div class="col-md-6">
+                                                <span class="font555 fontSize14">类型：</span>
+                                                <select id="infoLiarType" class="editInput" style="width: 150px;" placeholder="">
+                                                    <option value="1">骗子</option>
+                                                    <option value="2">号贩子</option>
+                                                </select>    
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="height10"></div>
+                                            <div class="col-md-6">
+                                                <span class="font555 fontSize14">游戏名称：</span>
+                                                <input id="infoGameName" class="editInput" type="text" maxlength="40"  value="" style="width: 200px" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="height10"></div>
+                                            <div class="col-md-10">
+                                                <span class="font555 fontSize14">实锤网址：</span>
+                                                <input id="infoUrl" class="editInput" type="text" maxlength="400" value="" style="width:80%" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="sepDiv">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3 style="line-height: 32px">详细说明</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cvSelfCom">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div>
+                                            <span class="fontSize14 font555">
+                                                <!--自我评价内容请渲染在这里 请勿换行-->
+                                                <textarea id="infoDesc" class="form-control" rows="10" cols="20" maxlength="2000" placeholder="请填写介绍(字数限制2000)" style="width: 100%"></textarea>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="height20"></div>
+
+
+                        </div>
+                        <div class="height30"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section class="footer2">
+        <div class="container">
+            <div class="social text-center">
+                <a href="mailto:marisa9386@gmail.com"><i class="fa fa-envelope"></i></a>
+                <a href="https://github.com/marisa9386/AvgSystem" target="_blank"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- footer section -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 copy-w3ls1">
+                    <ul class="nav-links">
+                        <li><a href="index.html">首页</a></li>
+                        <li>|</li>
+                        <li><a href="LiarPage.html">名单</a></li>
+                        <li>|</li>
+                        <li><a href="commit.html">发布</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 copy-w3ls2">
+                    <p class="copyright">Copyright &copy; 2018 Marisa9386 All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--评论模态框 begin-->
+    <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document" style="max-width:550px;margin-top: 18.5% ">
+            <div class="modal-content" style="max-width: 550px;">
+                <div class="modal-header" style="text-align: center;border-bottom: 0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body" style="padding: 20px 55px 20px 55px">
+                    <div class="height40"></div>
+                    <!--用户登录表单-->
+                    <form>
+                        <div class="form-group">
+                            <textarea id="commentContent" maxlength="200" class="form-control" rows="4"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" id="comment_button" onclick="uploadComment()">
+                        发布
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--评论模态框 end-->
+    <!-- /footer section -->
+    <!-- back to top -->
+    <a href="#0" class="cd-top">Top</a>
+    <!-- /back to top -->
+    <!-- js for nebulas -->
+    <script type="text/javascript">
+
+        var LiarId = getQueryString("id");
+        var actmsg = "update"
+        if (LiarId == null || LiarId == "")
+        {
+            actmsg = "save";
+        }
+        
+        $(function () {
+
+            if (actmsg == "update") {
+                loadInfoDetail();
+            }
+            else {
+                $("#btnSave").show();
+            }
+        });
+
+
+        var loadInfoDetail = function () {
+            var args = JSON.stringify([LiarId]);
+            onSimulateCallClick(mainContractAddress, "getLiarInfo", args, function (e) {
+                var item = JSON.parse(e.result);
+                if (item.qq) {
+
+
+                    $("#infoQq").val(item.qq);
+                    $("#infoUrl").val(item.url);
+                    $("#infoLiarType").val(item.liarType);
+                    $("#infoGameName").val(item.gameName);
+                    $("#infoDesc").val(item.desc);
+                    //loadInfo("gameDesc", item.desc);
+                    $("#btnSave").show();
+
+                } else {
+
+                }
+
+            });
+
+        };
+
+        function saveLiarInfo() {
+
+            //
+            var qq = $("#infoQq").val();
+            var gameName = $("#infoGameName").val();
+            var url = $("#infoUrl").val();
+            var liarType = $("#infoLiarType").val();
+            var desc = $("#infoDesc").val();
+            var param = {};
+            var method = "";
+            if (actmsg == "update") {
+                method = "updateLiarInfo";
+                param = { id: LiarId, qq: qq, desc: desc, gameName: gameName, url: url, liarType: liarType };
+            }
+            else {
+                method = "addLiarInfo";
+                param = { qq: qq, desc: desc, gameName: gameName, url: url, liarType: liarType };
+            }
+
+            var args = JSON.stringify([param]);
+            newTransaction(mainContractAddress, 0, method, args, function (t) {
+
+                if ("Error: Transaction rejected by user" == t) {
+                    layer.alert("已取消", function (index) {
+                        layer.close(index);
+                    });
+                } else {
+
+                    layer.alert("发布中，请等待交易成功", function (index) {
+                        layer.close(index);
+                        window.location.href = 'LiarPage.html';
+                    });
+                }
+
+
+
+
+
+
+            });
+        }
+
+
+        function loadInfoHtml(id, content) {
+            if (id == "" || id == null || id == "undefined") {
+                return;
+            }
+            else {
+                if (content != null && content != "null") {
+                    $("#" + id).html(content);
+                }
+                else {
+                    $("#" + id).html('');
+                }
+            }
+        }
+
+
+    </script>
+    <!-- /js for nebulas -->
+    <!-- js for navigation -->
+    <script>
+			//  The function to change the class
+			var changeClass = function (r,className1,className2) {
+				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+				if( regex.test(r.className) ) {
+					r.className = r.className.replace(regex,' '+className2+' ');
+			    }
+			    else{
+					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+			    }
+			    return r.className;
+			};
+
+			//  Creating our button in JS for smaller screens
+			var menuElements = document.getElementById('menu');
+			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+			//  Toggle the class on click to show / hide the menu
+			document.getElementById('menutoggle').onclick = function() {
+				changeClass(this, 'navtoogle active', 'navtoogle');
+			}
+
+			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+			document.onclick = function(e) {
+				var mobileButton = document.getElementById('menutoggle'),
+					buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+				}
+			}
+    </script>
+</body>
+</html>
